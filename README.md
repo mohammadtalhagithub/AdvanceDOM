@@ -13,4 +13,4 @@ This repository contains code for advance DOM Manipulation by JavaScript.
 6. git checkout master : To bring the HEAD onto the master branch
 7. git branch -M main OR master {following steps are to push those commits onto a cloud repository, GitHub, if we want to}.
 8. git remote add origin https://github.com/mohammadtalhagithub/RepositoryName.git
-9. git push -u origin master OR main
+9. git push -u origin main OR master
