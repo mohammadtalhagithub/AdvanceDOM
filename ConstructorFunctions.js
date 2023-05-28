@@ -9,14 +9,17 @@
  * @param {*} hasWorkPermit takes boolean values.
  * @param {*} languages
  */
-function HouseKeeper (name, age, hasWorkPermit, languages){
+function HouseKeeper (name, age, hasWorkPermit, languages) {
     this.KeeperName = name;
     this.KeeperAge = age;
     this.KeeperWorkPermit = hasWorkPermit;
     this.KeeperLanguages = languages;
+    this.Clean = function () {
+        alert("Cleaning in progress...");
+    }
 }
 
 // creating an Instance of HouseKeeper
 var houseKeeper1 = new HouseKeeper ("Timmy", 19, true, ["French", "English"]);
 
-console.log(houseKeeper1);
+// console.log(houseKeeper1);

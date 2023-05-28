@@ -19,4 +19,6 @@ h1 {
 .drumBtns {
     font-size: 1.5rem;
     font-weight: 600;
+    width: 100px;
+    height: 100px;
 }

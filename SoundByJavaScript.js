@@ -47,46 +47,59 @@ document
   });
 */
 // using loop and Switch Statements
-let NoOfBtns = document.querySelectorAll(".drumBtns").length;
+// let NoOfBtns = document.querySelectorAll(".drumBtns").length;
+let NoOfBtns = $(".drumBtns").length;
 
 // loop statement to add EventListener to all element with a class of .drumBtns
 for (let i = 0; i < NoOfBtns; i++) {
-    document.querySelectorAll(".drumBtns")[i].addEventListener("click", function () {
+    $(".drumBtns")[i].addEventListener("click", function () {
         /**
          * @param btnInnerHTML variable to store innerHTML with html class of .drumBtns
          */
-
         var btnInnerHTML = this.innerHTML;
-
-        switch (btnInnerHTML) {
-            case "Drum":
-                var audio = new Audio("sounds/DrumsAccent.mp3");
-                audio.play();
-                break;
-
-            case "Bass":
-                var audio = new Audio("sounds/BassDrum.wav");
-                audio.play();
-                break;
-
-            case "Drum Joke":
-                var audio = new Audio("sounds/DrumJokeAccent.wav");
-                audio.play();
-                break;
-
-            case "Guitar":
-                var audio = new Audio("sounds/GuitarStroke.wav");
-                audio.play();
-                break;
-
-            case "Bass Rumble":
-                var audio = new Audio("sounds/BassRumble.wav");
-                audio.play();
-                break;
-
-            default:
-                alert("Method Not implemented for this button...")
-                break;
-        }
+        makeSound(btnInnerHTML); 
     });
+}
+
+// document.addEventListener("event", callback function () {....})
+
+// keypress
+document.addEventListener("keypress", function (event) {
+  // alert('key was pressed...');
+  // console.log(event);
+  makeSound(event.key);
+})
+
+function makeSound(click_or_key) {
+
+  switch (click_or_key) {
+    case "d":
+        var audio = new Audio("sounds/DrumsAccent.mp3");
+        audio.play();
+        break;
+
+    case "b":
+        var audio = new Audio("sounds/BassDrum.wav");
+        audio.play();
+        break;
+
+    case "j":
+        var audio = new Audio("sounds/DrumJokeAccent.wav");
+        audio.play();
+        break;
+
+    case "g":
+        var audio = new Audio("sounds/GuitarStroke.wav");
+        audio.play();
+        break;
+
+    case "r":
+        var audio = new Audio("sounds/BassRumble.wav");
+        audio.play();
+        break;
+
+    default:
+        alert("Method Not implemented for this button...")
+        break;
+}
 }
